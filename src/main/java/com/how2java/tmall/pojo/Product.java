@@ -21,13 +21,15 @@ public class Product {
     @JoinColumn(name = "cid")
     private Category category;
 
-    // 如果既没有致命关联到哪个Column，有没有明确要用@Transient忽略，那么就会自动关联到表对应的同名字段
+    // 如果既没有指明关联到哪个Column，有没有明确要用@Transient忽略，那么就会自动关联到表对应的同名字段
     private String name;
     private String subTitle;
     private float originalPrice;
     private float promotePrice;
     private int stock;
     private Date createDate;
+    @Transient
+    private ProductImage firstProductImage;
 
     public int getId() {
         return id;
@@ -91,5 +93,13 @@ public class Product {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public ProductImage getFirstProductImage() {
+        return firstProductImage;
+    }
+
+    public void setFirstProductImage(ProductImage firstProductImage) {
+        this.firstProductImage = firstProductImage;
     }
 }

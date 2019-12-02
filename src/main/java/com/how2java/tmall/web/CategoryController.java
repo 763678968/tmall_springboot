@@ -59,4 +59,16 @@ public class CategoryController {
         Category bean = categoryService.get(id);
         return bean;
     }
+
+    @PutMapping("/categories/{id}")
+    public Object update(Category bean, MultipartFile image, HttpServletRequest request) throws IOException {
+        String name = request.getParameter("name");
+        bean.setName(name);
+        categoryService.update(bean);
+
+        if (image != null) {
+            saveOrUpdateImageFile(bean, image, request);
+        }
+        return bean;
+    }
 }

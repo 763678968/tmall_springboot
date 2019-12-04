@@ -17,6 +17,7 @@ public class ProductImageService   {
     @Autowired ProductImageDAO productImageDAO;
     @Autowired ProductService productService;
 
+
     public void add(ProductImage bean) {
         productImageDAO.save(bean);
 
@@ -48,5 +49,7 @@ public class ProductImageService   {
         for (Product product : products)
             setFirstProdutImage(product);
     }
+
+
 
 }

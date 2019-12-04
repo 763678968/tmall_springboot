@@ -86,7 +86,7 @@ public class ProductService  {
         product.setReviewCount(reviewCount);
     }
 
-    public void setSaleAndReviewNubmer(List<Product> products) {
+    public void setSaleAndReviewNumber(List<Product> products) {
         for (Product product : products) {
             setSaleAndReviewNumber(product);
         }
